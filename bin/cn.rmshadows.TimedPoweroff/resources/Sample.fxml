@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!-- By Ryan Yim -->
+
+<VBox prefHeight="330.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="resources.SampleController">
+	<children>
+		<MenuBar fx:id="Me" opacity="0.74" VBox.vgrow="NEVER">
+			<menus>
+				<Menu mnemonicParsing="false" text="选项">
+					<items>
+						<MenuItem fx:id="MI_Nothing" mnemonicParsing="false" onAction="#menuNothingAction" text="什么都没有" />
+						<MenuItem fx:id="MI_Quit" mnemonicParsing="false" onAction="#menuQuitAction" text="退出" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="帮助">
+					<items>
+						<MenuItem fx:id="MI_Info" mnemonicParsing="false" onAction="#menuInfoAction" text="说明" />
+						<MenuItem fx:id="MI_About" mnemonicParsing="false" onAction="#menuAboutAction" text="关于" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<AnchorPane fx:id="An" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+			<children>
+				<TextField fx:id="Min" alignment="CENTER" editable="false" focusTraversable="false" layoutX="131.0" layoutY="145.0" opacity="0.78" prefHeight="26.0" prefWidth="42.0" promptText="0" />
+				<Button id="run" fx:id="run" defaultButton="true" layoutX="194.0" layoutY="200.0" mnemonicParsing="false" onAction="#runButtonAction" opacity="0.49" prefHeight="66.0" prefWidth="200.0" style="-fx-text-fill: #FFFFFF; -fx-background-color: #7F4EFE;" stylesheets="@application.css" text="运行">
+					<font>
+						<Font size="33.0" />
+					</font>
+					<cursor>
+						<Cursor fx:constant="HAND" />
+					</cursor>
+				</Button>
+				<Button fx:id="reboot" focusTraversable="false" layoutX="405.0" layoutY="200.0" mnemonicParsing="false" onAction="#rebootButtonAction" opacity="0.74" prefHeight="28.0" prefWidth="58.0" text="重启">
+					<font>
+						<Font size="13.0" />
+					</font>
+					<cursor>
+						<Cursor fx:constant="HAND" />
+					</cursor>
+				</Button>
+				<Button fx:id="cancel" focusTraversable="false" layoutX="405.0" layoutY="237.0" mnemonicParsing="false" onAction="#cancelButtonAction" opacity="0.8" prefHeight="28.0" prefWidth="58.0" text="取消">
+					<font>
+						<Font size="11.0" />
+					</font>
+					<cursor>
+						<Cursor fx:constant="HAND" />
+					</cursor>
+				</Button>
+				<Label layoutX="32.0" layoutY="107.0" prefHeight="26.0" prefWidth="102.0" text="小时/hour">
+					<font>
+						<Font size="19.0" />
+					</font>
+				</Label>
+				<Slider fx:id="S_Hour" blockIncrement="1.0" focusTraversable="false" layoutX="190.0" layoutY="113.0" majorTickUnit="1.0" max="72.0" minorTickCount="0" prefHeight="14.0" prefWidth="327.0" snapToTicks="true">
+					<cursor>
+						<Cursor fx:constant="H_RESIZE" />
+					</cursor>
+				</Slider>
+				<Slider fx:id="S_Min" blockIncrement="1.0" focusTraversable="false" layoutX="190.0" layoutY="151.0" majorTickUnit="2.0" max="120.0" minorTickCount="1" prefHeight="14.0" prefWidth="327.0" snapToTicks="true">
+					<cursor>
+						<Cursor fx:constant="H_RESIZE" />
+					</cursor>
+				</Slider>
+				<Label layoutX="36.0" layoutY="145.0" prefHeight="26.0" prefWidth="94.0" text="分钟/min">
+					<font>
+						<Font size="19.0" />
+					</font>
+				</Label>
+				<TextField fx:id="Hour" alignment="CENTER" editable="false" focusTraversable="false" layoutX="131.0" layoutY="107.0" opacity="0.79" prefHeight="26.0" prefWidth="42.0" promptText="0" />
+				<Slider fx:id="S_Mode" blockIncrement="1.0" focusTraversable="false" layoutX="94.0" layoutY="200.0" majorTickUnit="1.0" max="1.0" minorTickCount="0" opacity="0.51" orientation="VERTICAL" prefHeight="66.0" prefWidth="14.0" snapToTicks="true" value="1.0">
+					<cursor>
+						<Cursor fx:constant="V_RESIZE" />
+					</cursor>
+				</Slider>
+				<Label layoutX="119.0" layoutY="199.0" prefHeight="26.0" prefWidth="69.0" text="倒计时关机">
+					<font>
+						<Font size="11.0" />
+					</font>
+				</Label>
+				<Label alignment="CENTER" layoutX="118.0" layoutY="238.0" prefHeight="26.0" prefWidth="58.0" text="计划关机">
+					<font>
+						<Font size="11.0" />
+					</font>
+				</Label>
+				<Separator layoutX="180.0" layoutY="200.0" orientation="VERTICAL" prefHeight="66.0" prefWidth="14.0" />
+				<Label layoutX="32.0" layoutY="83.0" prefHeight="26.0" prefWidth="70.0" text="-计时关机-">
+					<font>
+						<Font size="10.0" />
+					</font>
+				</Label>
+				<Separator layoutX="89.0" layoutY="95.0" prefHeight="3.0" prefWidth="430.0" />
+				<Label layoutX="31.0" layoutY="9.0" prefHeight="26.0" prefWidth="70.0" text="-计划关机-">
+					<font>
+						<Font size="10.0" />
+					</font>
+				</Label>
+				<Separator layoutX="88.0" layoutY="21.0" prefHeight="3.0" prefWidth="430.0" />
+				<Separator layoutX="31.0" layoutY="182.0" opacity="0.62" prefHeight="3.0" prefWidth="486.0" />
+				<HBox alignment="CENTER" layoutX="31.0" layoutY="29.0" prefHeight="46.0" prefWidth="486.0">
+					<children>
+						<TextField fx:id="Nian" alignment="CENTER" editable="false" focusTraversable="false" opacity="0.71" prefHeight="28.0" prefWidth="51.0">
+							<opaqueInsets>
+								<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+							</opaqueInsets>
+						</TextField>
+						<Label fx:id="Year" onMouseClicked="#YearAction" prefHeight="26.0" prefWidth="34.0" text=" 年" textAlignment="CENTER">
+							<font>
+								<Font size="19.0" />
+							</font>
+							<opaqueInsets>
+								<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+							</opaqueInsets>
+							<cursor>
+								<Cursor fx:constant="OPEN_HAND" />
+							</cursor>
+						</Label>
+						<TextField fx:id="Yue" alignment="CENTER" editable="false" focusTraversable="false" layoutX="214.0" layoutY="10.0" opacity="0.71" prefHeight="26.0" prefWidth="42.0">
+							<opaqueInsets>
+								<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+							</opaqueInsets>
+						</TextField>
+						<Label fx:id="Month" layoutX="257.0" layoutY="10.0" onMouseClicked="#MonthAboutAction" prefHeight="26.0" prefWidth="35.0" text=" 月" textAlignment="CENTER">
+							<font>
+								<Font size="19.0" />
+							</font>
+							<cursor>
+								<Cursor fx:constant="OPEN_HAND" />
+							</cursor>
+						</Label>
+						<TextField fx:id="Ri" alignment="CENTER" editable="false" focusTraversable="false" layoutX="253.0" layoutY="10.0" opacity="0.71" prefHeight="26.0" prefWidth="42.0" />
+						<Label fx:id="Day" layoutX="296.0" layoutY="10.0" onMouseClicked="#DayAboutAction" prefHeight="32.0" prefWidth="35.0" text=" 日">
+							<font>
+								<Font size="19.0" />
+							</font>
+							<cursor>
+								<Cursor fx:constant="OPEN_HAND" />
+							</cursor>
+						</Label>
+						<TextField fx:id="Shi" alignment="CENTER" editable="false" focusTraversable="false" layoutX="136.0" layoutY="10.0" opacity="0.71" prefHeight="26.0" prefWidth="42.0" />
+						<Label fx:id="Hours" layoutX="180.0" layoutY="10.0" onMouseClicked="#HoursAboutAction" prefHeight="26.0" prefWidth="35.0" text=" 时" textAlignment="CENTER">
+							<font>
+								<Font size="19.0" />
+							</font>
+							<cursor>
+								<Cursor fx:constant="OPEN_HAND" />
+							</cursor>
+						</Label>
+						<TextField fx:id="Fen" alignment="CENTER" editable="false" focusTraversable="false" layoutX="214.0" layoutY="10.0" opacity="0.71" prefHeight="26.0" prefWidth="42.0" />
+						<Label fx:id="Minutes" layoutX="257.0" layoutY="10.0" onMouseClicked="#MinutesAboutAction" prefHeight="26.0" prefWidth="35.0" text=" 分" textAlignment="CENTER">
+							<font>
+								<Font size="19.0" />
+							</font>
+							<cursor>
+								<Cursor fx:constant="OPEN_HAND" />
+							</cursor>
+						</Label>
+						<TextField fx:id="Miao" alignment="CENTER" editable="false" focusTraversable="false" layoutX="292.0" layoutY="10.0" opacity="0.78" prefHeight="26.0" prefWidth="42.0" />
+						<Label fx:id="Seconds" layoutX="335.0" layoutY="10.0" onMouseClicked="#SecondsAboutAction" prefHeight="26.0" prefWidth="35.0" text=" 秒" textAlignment="CENTER">
+							<font>
+								<Font size="19.0" />
+							</font>
+							<cursor>
+								<Cursor fx:constant="OPEN_HAND" />
+							</cursor>
+						</Label>
+					</children>
+					<opaqueInsets>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</opaqueInsets>
+				</HBox>
+				<Label layoutX="43.0" layoutY="64.0" prefHeight="26.0" prefWidth="194.0" text="注：点击“年”、“月”等标签以刷新当前时间">
+					<font>
+						<Font size="9.0" />
+					</font>
+				</Label>
+			</children>
+		</AnchorPane>
+	</children>
+</VBox>

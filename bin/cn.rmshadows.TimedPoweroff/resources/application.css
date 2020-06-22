@@ -1,0 +1,23 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+/* 没记错的话，这个应该没用到 */
+.windows7{
+	-fx-background-color:
+		#3c7fb1,
+ 		linear-gradient(#fafdfe, #e8f5fc),
+		linear-gradient(#eaf6fd 0.0%, #d9f0fc 49.0%, #bee6fd 50.0%, #a7d9f5 100.0%);
+	-fx-background-insets: 0.0,1.0,2.0;
+	-fx-background-radius: 3.0,2.0,1.0;
+	-fx-padding: 3.0 30.0 3.0 30.0;
+	-fx-text-fill: black;
+	-fx-font-size: 14.0px;
+}
+/* 设置背景 */
+.bgm{
+	-fx-background-image:url(R.png);
+	-fx-background-size:100%;
+}
+/* 设置菜单栏 */
+.menu{
+	-fx-background-color:#FFFFFF;
+	opacity: 0.5;
+}
