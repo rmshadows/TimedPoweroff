@@ -39,5 +39,5 @@ Windows下打包：`jlink --launcher StartTimedPoweroff=cn.rmshadows.TimedPowero
 
 #### 许可
 
-[LICENSE]()
+[LICENSE](https://gitee.com/rmshadows/TimedPoweroff/new/master?license=Apache-2.0)
 
